@@ -3,6 +3,9 @@ FROM jupyter/tensorflow-notebook
 # Install Keras
 RUN pip --no-cache-dir install keras
 
+# Install image tools
+RUN pip --no-cache-dir install tifffile
+
 # Install Database tools
 RUN pip --no-cache-dir install psycopg2 \
         sqlalchemy \
