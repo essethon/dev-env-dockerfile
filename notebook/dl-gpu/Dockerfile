@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest-devel-gpu-py3
+FROM tensorflow/tensorflow:latest-gpu-py3
 
 # Install Keras
 RUN pip3 --no-cache-dir install keras
