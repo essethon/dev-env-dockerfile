@@ -19,6 +19,16 @@ RUN pip3 --no-cache-dir install \
         geopandas \
         shapely 
         # xgboost
+
+# build and install xgboost
+RUN apt-get update && apt-get --fix-missing install -y git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+WORKDIR /opt
+RUN git clone --recursive https://github.com/dmlc/xgboost.git
+WORKDIR /opt/xgboost
+RUN /opt/xgboost/build.sh && \
+    pip3 --no-cache-dir install -e python-package
         
 # install mapnik ，note: mapnik must install before gdal
 RUN apt-get update && apt-get --fix-missing install -y python3-mapnik && \
