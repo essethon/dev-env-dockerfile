@@ -1,5 +1,8 @@
 FROM tensorflow/tensorflow:latest-gpu-py3
 
+# Upgrade pip
+RUN pip3 --no-cache-dir install --upgrade pip
+
 # Install Keras
 RUN pip3 --no-cache-dir install keras
 
@@ -7,7 +10,7 @@ RUN pip3 --no-cache-dir install keras
 RUN pip3 --no-cache-dir install tifffile
 
 # Install Database tools
-RUN pip3 --no-cache-dir install psycopg2 \
+RUN pip3 --no-cache-dir install psycopg2-binary \
         sqlalchemy \
         asyncpg \
         peewee
