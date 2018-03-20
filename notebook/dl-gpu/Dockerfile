@@ -52,6 +52,9 @@ RUN pip3 --no-cache-dir install mxnet  && \
 # install pytorch
 # RUN conda install pytorch torchvision -c soumith
 
+# install TFLearn
+RUN pip3 --no-cache-dir install tflearn
+
 # User permissions
 RUN useradd ipynb && \
     mkdir /home/ipynb && \

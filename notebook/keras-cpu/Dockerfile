@@ -1,7 +1,7 @@
 FROM jupyter/tensorflow-notebook
 
 # Upgrade pip
-RUN pip3 --no-cache-dir install --upgrade pip
+RUN pip --no-cache-dir install --upgrade pip
 
 # Install Keras
 RUN pip --no-cache-dir install keras
