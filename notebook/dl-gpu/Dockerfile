@@ -7,7 +7,11 @@ RUN pip3 --no-cache-dir install --upgrade pip
 RUN pip3 --no-cache-dir install keras
 
 # Install image tools
-RUN pip3 --no-cache-dir install tifffile
+RUN apt-get update && apt-get --fix-missing install -y \
+    libsm6 libxext6 libfontconfig1 libxrender1 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN pip3 --no-cache-dir install tifffile opencv-python
 
 # Install Database tools
 RUN pip3 --no-cache-dir install psycopg2-binary \
