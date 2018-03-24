@@ -49,15 +49,11 @@ RUN add-apt-repository -y ppa:ubuntugis/ppa && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# install mxnet
-RUN pip3 --no-cache-dir install mxnet  && \
-    pip3 --no-cache-dir install graphviz
+# install mxnet tflearn tqdm
+RUN pip3 --no-cache-dir install mxnet graphviz tflearn tqdm
 
 # install pytorch
 # RUN conda install pytorch torchvision -c soumith
-
-# install TFLearn
-RUN pip3 --no-cache-dir install tflearn
 
 # User permissions
 RUN useradd ipynb && \
