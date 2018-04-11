@@ -56,12 +56,12 @@ RUN pip3 --no-cache-dir install mxnet graphviz tflearn tqdm
 # RUN conda install pytorch torchvision -c soumith
 
 # User permissions
-RUN useradd ipynb && \
-    mkdir /home/ipynb && \
-    mkdir /home/ipynb/.jupyter && cp /root/.jupyter/jupyter_notebook_config.py /home/ipynb/.jupyter/ && \
-    chown -R ipynb:ipynb /home/ipynb && \
-    chown -R ipynb:ipynb /notebooks
+# RUN useradd ipynb && \
+#     mkdir /home/ipynb && \
+#     mkdir /home/ipynb/.jupyter && cp /root/.jupyter/jupyter_notebook_config.py /home/ipynb/.jupyter/ && \
+#     chown -R ipynb:ipynb /home/ipynb && \
+#     chown -R ipynb:ipynb /notebooks
 
 WORKDIR /notebooks
 
-USER ipynb
+# USER ipynb
