@@ -55,6 +55,11 @@ RUN pip3 --no-cache-dir install mxnet graphviz tflearn tqdm
 # install pytorch
 # RUN conda install pytorch torchvision -c soumith
 
+# install VIM
+RUN apt-get update && apt-get --fix-missing install -y vim
+RUN mkdir -p /root/.pip
+COPY pip.conf /root/.pip/
+
 # User permissions
 # RUN useradd ipynb && \
 #     mkdir /home/ipynb && \
