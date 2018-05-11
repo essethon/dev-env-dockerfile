@@ -24,7 +24,8 @@ RUN pip3 --no-cache-dir install --upgrade numpy
 RUN pip3 --no-cache-dir install \
         Pillow \
         geopandas \
-        shapely 
+        shapely \
+        seaborn
         # xgboost
 
 # build and install xgboost
