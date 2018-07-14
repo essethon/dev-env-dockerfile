@@ -25,7 +25,8 @@ RUN pip3 --no-cache-dir install \
         Pillow \
         geopandas \
         shapely \
-        seaborn
+        seaborn \
+        pyecharts
         # xgboost
 
 # build and install xgboost
